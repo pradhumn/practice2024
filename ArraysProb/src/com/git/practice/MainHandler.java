@@ -10,9 +10,34 @@ public class MainHandler {
 		// int[] ary = {1, 2, 1, 4 ,7 ,8};
 		// System.out.println(containerWithMostWater(ary));
 
-		int[] ary = { 2, 0, 2 };
-		System.out.println(trappingRainWaterProb(ary));
+		// int[] ary = { 2, 0, 2 };
+		// System.out.println(trappingRainWaterProb(ary));
 
+		// print frequency of sorted element
+		int[] ary = { 1, 1, 3, 4, 5, 6, 6, 6, 7, 7, 8, 8, 9, 10 };
+		printfrq(ary);
+
+	}
+
+	private static void printfrq(int[] ary) {
+		int count = 1;
+		for (int i = 1; i < ary.length; i++) {
+			if (ary[i - 1] == ary[i]) {
+				count++;
+				if (i == ary.length - 1)
+					System.out.println(ary[i] + "=" + count);
+
+			} else {
+
+				System.out.println(ary[i - 1] + "=" + count);
+				if (i == ary.length - 1)
+					System.out.println(ary[i] + "=" + count);
+
+				if (count > 1)
+					count = 1;
+			}
+
+		}
 	}
 
 	private static int trappingRainWaterProb(int[] ary) {
